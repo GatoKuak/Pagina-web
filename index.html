@@ -2,53 +2,99 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi página con tablas</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Mi página web</title>
     <style>
         body {
             font-family: Arial;
-            background: #f0f4ff;
-            text-align: center;
+            margin: 25px;
+            background: #f5f5f5;
         }
+        h1 { text-align: center; }
         table {
-            margin: 20px auto;
+            width: 100%;
             border-collapse: collapse;
-            width: 80%;
-            background: white;
         }
-        th, td {
-            border: 1px solid #555;
+        td, th {
+            border: 1px solid #777;
             padding: 12px;
         }
-        th {
-            background: #3459a5;
-            color: white;
+        button {
+            padding: 8px;
+            margin: 3px;
+            cursor: pointer;
+        }
+        .menu { text-align: center; }
+        .contenido {
+            display: flex;
+            gap: 20px;
+        }
+        aside { width: 180px; }
+        aside button {
+            display: block;
+            width: 100%;
+        }
+        main { flex: 1; min-width: 0; }
+        @media(max-width:600px) {
+            .contenido { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <h1>Mi primera página con tablas</h1>
-    <h2>Horario de clases</h2>
-    <table>
-        <tr>
-            <th>Día</th>
-            <th>Materia</th>
-            <th>Horario</th>
-        </tr>
-        <tr>
-            <td>Lunes</td>
-            <td>Programación</td>
-            <td>08:00 - 10:00</td>
-        </tr>
-        <tr>
-            <td>Martes</td>
-            <td>Matemáticas</td>
-            <td>10:00 - 12:00</td>
-        </tr>
-        <tr>
-            <td>Miércoles</td>
-            <td>Física</td>
-            <td>08:00 - 10:00</td>
-        </tr>
-    </table>
+    <h1>Mi página web</h1>
+
+    <div class="menu">
+        <button>Inicio</button>
+        <button>Servicios</button>
+        <button>Contacto</button>
+    </div>
+    <hr>
+
+    <div class="contenido">
+        <aside>
+            <h3>Menú lateral</h3>
+            <button>Dashboard</button>
+            <button>Estudiantes</button>
+            <button>Docentes</button>
+            <button>Materias</button>
+            <button>Configuración</button>
+        </aside>
+
+        <main>
+            <h2>Contenido principal</h2>
+            <p>Bienvenido al sistema de administración.</p>
+            <p>Selecciona una opción del menú.</p>
+
+            <h3>Información general</h3>
+            <table>
+                <tr>
+                    <th>Sección</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+                <tr>
+                    <td>Estudiantes</td>
+                    <td>Administrar estudiantes.</td>
+                    <td><button>Ver</button></td>
+                </tr>
+                <tr>
+                    <td>Docentes</td>
+                    <td>Consultar docentes.</td>
+                    <td><button>Ver</button></td>
+                </tr>
+                <tr>
+                    <td>Materias</td>
+                    <td>Consultar materias.</td>
+                    <td><button>Ver</button></td>
+                </tr>
+            </table>
+
+            <h3>Acciones rápidas</h3>
+            <button>Registrar</button>
+            <button>Consultar</button>
+            <button>Salir</button>
+        </main>
+    </div>
 </body>
 </html>
